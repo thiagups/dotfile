@@ -214,4 +214,9 @@ return {
 		"nvim-neo-tree/neo-tree.nvim",
 		enabled = false,
 	},
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = true,
+	},
 }
