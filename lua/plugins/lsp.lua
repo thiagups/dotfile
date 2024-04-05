@@ -134,4 +134,7 @@ return {
 			table.insert(opts.sources, { name = "emoji" })
 		end,
 	},
+	{
+		"HiPhish/jinja.vim",
+	},
 }

@@ -11,9 +11,32 @@ return {
 	-- },
 	{
 		"navarasu/onedark.nvim",
+		enabled = false,
 		opts = {
 			style = "deep",
 			transparent = true,
 		},
 	},
+	{
+		'uloco/bluloco.nvim',
+		enabled = false,
+		lazy = false,
+		priority = 1000,
+		dependencies = { 'rktjmp/lush.nvim' },
+		opts = {
+			style = 'dark',
+			transparent = true,
+			italics = true,
+		}
+	},
+	{
+		'folke/tokyonight.nvim',
+		lazy = false,
+		priority = 1000,
+		opts = {
+			style = 'night',
+			transparent = true,
+			italics = true,
+		}
+	}
 }
