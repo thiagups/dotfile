@@ -17,7 +17,7 @@ keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 
 -- File explorer with NvimTree
 keymap.set("n", "<Leader>f", ":NvimTreeFindFile<Return>", opts)
-keymap.set("n", "<Leader>t", ":NvimTreeToggle<Return>", opts)
+keymap.set("n", "<Leader>e", ":NvimTreeToggle<Return>", opts)
 
 -- Tabs
 keymap.set("n", "te", ":tabedit")
@@ -40,6 +40,10 @@ keymap.set("n", "<C-S-h>", "<C-w><")
 keymap.set("n", "<C-S-l>", "<C-w>>")
 keymap.set("n", "<C-S-k>", "<C-w>+")
 keymap.set("n", "<C-S-j>", "<C-w>-")
+
+-- Togglterm
+keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
+keymap.set("n", "<C-\\>", ":ToggleTerm<Return>", opts)
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()

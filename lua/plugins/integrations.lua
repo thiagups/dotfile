@@ -55,4 +55,8 @@ return {
 			},
 		},
 	},
+	-- LazyGit
+	{
+		"kdheepak/lazygit.nvim",
+	},
 }
