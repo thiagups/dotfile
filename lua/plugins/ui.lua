@@ -233,4 +233,27 @@ return {
 			})
 		end,
 	},
+	-----------------------------------------------------------------------------
+	-- Super powerful color picker/colorizer plugin
+	{
+		"uga-rosa/ccc.nvim",
+		event = "FileType",
+		keys = {
+			{ "<Leader>mc", "<cmd>CccPick<CR>", desc = "Color-picker" },
+		},
+		opts = {
+			highlighter = {
+				auto_enable = true,
+				lsp = true,
+				excludes = { "lazy", "mason", "help", "neo-tree" },
+			},
+		},
+	},
+	------------------------------------------------------------------------------
+	-- Hint and fix deviating indentation
+	{
+		"tenxsoydev/tabs-vs-spaces.nvim",
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {},
+	},
 }
