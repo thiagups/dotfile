@@ -1,4 +1,7 @@
 return {
+
+	-- indent-blankline
+	-- Desc: Indentation lines
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "VeryLazy",
@@ -45,7 +48,30 @@ return {
 			hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 		end,
 	},
+
+	-- Delimiters Rainbow
+	-- Desc: Rainbow parentheses
 	{
 		"hiphish/rainbow-delimiters.nvim",
+	},
+
+	-- Tabs Vs Spaces
+	-- Desc: Show tabs vs spaces
+	{
+		"tenxsoydev/tabs-vs-spaces.nvim",
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {},
+	},
+
+	-- MiniTrailspace
+	-- Desc: Show trailing whitespace
+	{
+		"echasnovski/mini.trailspace",
+		event = { "BufReadPost", "BufNewFile" },
+		-- stylua: ignore
+		keys = {
+			{ '<Leader>cw', '<cmd>lua MiniTrailspace.trim()<CR>', desc = 'Erase Whitespace' },
+		},
+		opts = {},
 	},
 }

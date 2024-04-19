@@ -1,26 +1,4 @@
 return {
-	-- {
-	-- 	"sainnhe/sonokai",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.g.sonokai_transparent_background = "1"
-	-- 		vim.g.sonokai_enable_italic = "1"
-	-- 		vim.g.sonokai_style = "andromeda"
-	-- 		vim.cmd.colorscheme("sonokai")
-	-- 	end,
-	-- },
-
-	-- 	opts = {
-	-- 		style = "deep",
-	-- 		transparent = true,
-	-- 	},
-	-- },
-	-- {
-	-- "xStormyy/bearded-theme.nvim",
-	-- opts = {
-	-- 	style = "bearded-theme-monokai-black",
-	-- },
-	-- }
 	{
 		"polirritmico/monokai-nightasty.nvim",
 		lazy = false,
@@ -63,26 +41,14 @@ return {
 			require("monokai-nightasty").load(opts)
 		end,
 	},
+
+	-- nvim-cmp
+	-- Desc: Completion source for emoji
 	{
-		'uloco/bluloco.nvim',
-		enabled = false,
-		lazy = false,
-		priority = 1000,
-		dependencies = { 'rktjmp/lush.nvim' },
-		opts = {
-			style = 'dark',
-			transparent = true,
-			italics = true,
-		}
+		"nvim-cmp",
+		dependencies = { "hrsh7th/cmp-emoji" },
+		opts = function(_, opts)
+			table.insert(opts.sources, { name = "emoji" })
+		end,
 	},
-	{
-		'folke/tokyonight.nvim',
-		lazy = false,
-		priority = 1000,
-		opts = {
-			style = 'night',
-			transparent = true,
-			italics = true,
-		}
-	}
 }

@@ -1,4 +1,6 @@
 return {
+	-- Rest.nvim
+	-- Desc: Is a plugin for making API calls from vim
 	{
 		"rest-nvim/rest.nvim",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
@@ -55,8 +57,54 @@ return {
 			},
 		},
 	},
-	-- LazyGit
+
+	-- Dadbod UI
+	-- Desc: SQL client
 	{
-		"kdheepak/lazygit.nvim",
+		"kristijanhusak/vim-dadbod-ui",
+		enabled = false,
+		dependencies = {
+			{ "tpope/vim-dadbod", lazy = true },
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+		},
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
+		},
+		init = function()
+			-- Your DBUI configuration
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
+		keys = {
+			{
+
+				"<leader>d",
+				"<cmd>NvimTreeClose<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>",
+			},
+		},
+	},
+
+	-- ToggleTerm
+	-- Desc: Terminal
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		event = "VeryLazy",
+		config = function()
+			require("toggleterm").setup({
+				direction = "float",
+				close_on_exit = false,
+				float_opts = {
+					border = "curved",
+					winblend = 0,
+					highlights = {
+						border = "Normal",
+						background = "Normal",
+					},
+				},
+			})
+		end,
 	},
 }

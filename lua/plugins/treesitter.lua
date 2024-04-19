@@ -1,7 +1,6 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		tag = "v0.9.1",
 		config = function(_, opts)
 			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 			parser_config.jinja = {
@@ -19,7 +18,6 @@ return {
 				"typescript",
 				"css",
 				"gitignore",
-				"graphql",
 				"http",
 				"json",
 				"scss",
@@ -29,7 +27,7 @@ return {
 				"scss",
 				"twig",
 				"php",
-				"regex",
+				"html",
 			},
 			query_linter = {
 				enable = true,
@@ -48,6 +46,9 @@ return {
 			},
 		},
 	},
+
+	-- Tree Sitter Jinja2
+	-- Desc: Tree Sitter support for Jinja2
 	{
 		"theHamsta/tree-sitter-jinja2",
 	},

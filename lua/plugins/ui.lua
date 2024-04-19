@@ -1,13 +1,13 @@
 return {
-	{
-		"nvimdev/dashboard-nvim",
-		enabled = true,
-	},
+	-- Lualine
+	-- Desc: Statusline
 	{
 		"nvim-lualine/lualine.nvim",
 		enabled = true,
 	},
-	-- messages, cmdline and the popupmenu
+
+	-- Noice
+	-- Desc: Better notification
 	{
 		"folke/noice.nvim",
 		opts = function(_, opts)
@@ -51,17 +51,18 @@ return {
 			opts.presets.lsp_doc_border = true
 		end,
 	},
-
+	--- Nvim Notify
 	{
 		"rcarriga/nvim-notify",
 		opts = {
-			timeout = 5000,
+			timeout = 3000,
 			background_colour = "#000000",
-			render = "wrapped-compact",
-		},
+			render = "compact",
+		}
 	},
 
-	-- buffer line
+	-- Bufferline
+	-- Desc: Tabline
 	{
 		"akinsho/bufferline.nvim",
 		event = "VeryLazy",
@@ -78,7 +79,8 @@ return {
 		},
 	},
 
-	-- filename
+	-- Incline
+	-- Desc: Custom statusline
 	{
 		"b0o/incline.nvim",
 		dependencies = {},
@@ -108,24 +110,12 @@ return {
 			})
 		end,
 	},
-	-- LazyGit integration with Telescope
-	{
-		"kdheepak/lazygit.nvim",
-		keys = {
-			{
-				";c",
-				":LazyGit<Return>",
-				silent = true,
-				noremap = true,
-			},
-		},
-		-- optional for floating window border decoration
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
+
+	-- Dadbod UI
+	-- Desc: SQL client
 	{
 		"kristijanhusak/vim-dadbod-ui",
+		enabled = false,
 		dependencies = {
 			{ "tpope/vim-dadbod", lazy = true },
 			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
@@ -147,113 +137,5 @@ return {
 				"<cmd>NvimTreeClose<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>",
 			},
 		},
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		config = function()
-			require("nvim-tree").setup({
-				on_attach = function(bufnr)
-					local api = require("nvim-tree.api")
-
-					local function opts(desc)
-						return {
-							desc = "nvim-tree: " .. desc,
-							buffer = bufnr,
-							noremap = true,
-							silent = true,
-							nowait = true,
-						}
-					end
-
-					-- default mappings
-					api.config.mappings.default_on_attach(bufnr)
-
-					-- custom mappings
-					vim.keymap.set("n", "t", api.node.open.tab, opts("Tab"))
-				end,
-				actions = {
-					open_file = {
-						quit_on_open = true,
-					},
-				},
-				sort = {
-					sorter = "case_sensitive",
-				},
-				view = {
-					width = 30,
-					relativenumber = true,
-				},
-				renderer = {
-					group_empty = true,
-				},
-				filters = {
-					dotfiles = true,
-					custom = {
-						"node_modules/.*",
-					},
-				},
-				log = {
-					enable = true,
-					truncate = true,
-					types = {
-						diagnostics = true,
-						git = true,
-						profile = true,
-						watcher = true,
-					},
-				},
-			})
-
-			if vim.fn.argc(-1) == 0 then
-				vim.cmd("NvimTreeFocus")
-			end
-		end,
-	},
-	{
-		-- Neo tree --
-		"nvim-neo-tree/neo-tree.nvim",
-		enabled = false,
-	},
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		event = "VeryLazy",
-		config = function()
-			require("toggleterm").setup({
-				direction = "float",
-				close_on_exit = false,
-				float_opts = {
-					border = "curved",
-					winblend = 0,
-					highlights = {
-						border = "Normal",
-						background = "Normal",
-					},
-				},
-			})
-		end,
-	},
-	-----------------------------------------------------------------------------
-	-- Super powerful color picker/colorizer plugin
-	{
-		"uga-rosa/ccc.nvim",
-		event = "FileType",
-		keys = {
-			{ "<Leader>mc", "<cmd>CccPick<CR>", desc = "Color-picker" },
-		},
-		opts = {
-			highlighter = {
-				auto_enable = true,
-				lsp = true,
-				excludes = { "lazy", "mason", "help", "neo-tree" },
-			},
-		},
-	},
-	------------------------------------------------------------------------------
-	-- Hint and fix deviating indentation
-	{
-		"tenxsoydev/tabs-vs-spaces.nvim",
-		event = { "BufReadPost", "BufNewFile" },
-		opts = {},
 	},
 }

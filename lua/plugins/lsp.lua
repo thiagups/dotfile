@@ -1,20 +1,44 @@
 return {
-	-- tools
+
+	-- Mason
+	-- Desc: Language server installer
 	{
 		"williamboman/mason.nvim",
 		opts = function(_, opts)
 			vim.list_extend(opts.ensure_installed, {
-				"luacheck",
-				"shellcheck",
-				"shfmt",
-				"typescript-language-server",
-				"css-lsp",
-				"emmet-language-server",
+				"actionlint",
+      "ansible-language-server",
+      "ansible-lint",
+      "antlers-language-server",
+      "black",
+      "bash-language-server",
+      "blade-formatter",
+      "docker-compose-language-service",
+      "dockerfile-language-server",
+      "dot-language-server",
+      "emmet-ls",
+      "eslint_d",
+      "flake8",
+      "hadolint",
+      "html-lsp",
+      "intelephense",
+      "nginx-language-server",
+      "php-debug-adapter",
+      "phpstan",
+      "pint",
+      "prettierd",
+      "pyright",
+      "rustywind",
+      "shellcheck",
+      "shfmt",
+      "stylua",
+      "tailwindcss-language-server",
 			})
 		end,
 	},
 
-	-- lsp servers
+	-- LSPConfig
+	-- Desc: Config for LSP
 	{
 		"neovim/nvim-lspconfig",
 		opts = {
@@ -127,14 +151,21 @@ return {
 			setup = {},
 		},
 	},
+
+	-- Jinja
+	-- Desc: Jinja2 syntax
+	{
+		"HiPhish/jinja.vim",
+		enabled = true
+	},
+
+	-- nvim-cmp
+	-- Desc: Completion Engine
 	{
 		"nvim-cmp",
 		dependencies = { "hrsh7th/cmp-emoji" },
 		opts = function(_, opts)
 			table.insert(opts.sources, { name = "emoji" })
 		end,
-	},
-	{
-		"HiPhish/jinja.vim",
 	},
 }
