@@ -59,6 +59,7 @@ return {
 	-- Desc: Show tabs vs spaces
 	{
 		"tenxsoydev/tabs-vs-spaces.nvim",
+		enabled = false,
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {},
 	},
@@ -67,6 +68,7 @@ return {
 	-- Desc: Show trailing whitespace
 	{
 		"echasnovski/mini.trailspace",
+		enabled = false,
 		event = { "BufReadPost", "BufNewFile" },
 		-- stylua: ignore
 		keys = {

@@ -1,7 +1,7 @@
 return {
 	-- Guess-indent
 	-- Automatic indentation style detection
-	{ "nmac427/guess-indent.nvim", lazy = false, priority = 50, config = true },
+	{ "nmac427/guess-indent.nvim", lazy = false, priority = 50, config = true, enabled = false },
 	-- Hihglight colors
 	-- Color code in the editor
 	{

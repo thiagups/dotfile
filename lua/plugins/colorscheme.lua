@@ -42,10 +42,11 @@ return {
 		end,
 	},
 
-	-- nvim-cmp
+	-- Nvim CMP
 	-- Desc: Completion source for emoji
 	{
 		"nvim-cmp",
+		enabled = true,
 		dependencies = { "hrsh7th/cmp-emoji" },
 		opts = function(_, opts)
 			table.insert(opts.sources, { name = "emoji" })

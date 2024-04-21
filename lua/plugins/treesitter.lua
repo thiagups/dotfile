@@ -46,10 +46,4 @@ return {
 			},
 		},
 	},
-
-	-- Tree Sitter Jinja2
-	-- Desc: Tree Sitter support for Jinja2
-	{
-		"theHamsta/tree-sitter-jinja2",
-	},
 }

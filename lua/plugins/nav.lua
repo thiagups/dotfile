@@ -1,5 +1,5 @@
 return {
-	
+
 	-- Nvim-Tree
 	-- Desc: File explorer
 	{
@@ -118,5 +118,8 @@ return {
 			})
 		end,
 	},
-}
 
+	-- Tmux Navigator
+	-- Desc: Tmux Navigator
+	{ "christoomey/vim-tmux-navigator" },
+}
