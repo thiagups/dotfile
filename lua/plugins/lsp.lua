@@ -168,4 +168,8 @@ return {
 			table.insert(opts.sources, { name = "emoji" })
 		end,
 	},
+
+	{
+		"jwalton512/vim-blade",
+	},
 }
