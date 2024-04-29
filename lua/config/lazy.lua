@@ -17,7 +17,7 @@ require("lazy").setup({
 			"LazyVim/LazyVim",
 			import = "lazyvim.plugins",
 			opts = {
-				colorscheme = "monokai-nightasty",
+				colorscheme = "cyberdream",
 				news = {
 					lazyvim = true,
 					neovim = true,
@@ -28,8 +28,8 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 		{ import = "lazyvim.plugins.extras.coding.codeium" },
-		{ import = "lazyvim.plugins.extras.vscode"},
-		{ import = "lazyvim.plugins.extras.editor.harpoon2"},
+		{ import = "lazyvim.plugins.extras.vscode" },
+		{ import = "lazyvim.plugins.extras.editor.harpoon2" },
 		{ import = "plugins" },
 	},
 	defaults = {

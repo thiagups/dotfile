@@ -58,7 +58,7 @@ return {
 			timeout = 3000,
 			background_colour = "#000000",
 			render = "compact",
-		}
+		},
 	},
 
 	-- Bufferline
@@ -84,7 +84,7 @@ return {
 	{
 		"b0o/incline.nvim",
 		dependencies = {
-			{ "nvim-tree/nvim-web-devicons" }
+			{ "nvim-tree/nvim-web-devicons" },
 		},
 		event = "BufReadPre",
 		priority = 1200,
@@ -117,8 +117,8 @@ return {
 	-- Desc: SQL client
 	{
 		"kristijanhusak/vim-dadbod-ui",
-		enabled = false,
 		dependencies = {
+			{ "tpope/vim-dotenv", lazy = true },
 			{ "tpope/vim-dadbod", lazy = true },
 			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
 		},
@@ -129,15 +129,21 @@ return {
 			"DBUIFindBuffer",
 		},
 		init = function()
-			-- Your DBUI configuration
 			vim.g.db_ui_use_nerd_fonts = 1
-		end,
-		keys = {
-			{
+			vim.g.db_ui_winwidth = 30
+			vim.g.db_ui_show_help = 0
+			vim.g.db_ui_use_nvim_notify = 1
+			vim.g.db_ui_win_position = "left"
 
-				"<leader>d",
-				"<cmd>NvimTreeClose<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>",
-			},
-		},
+			require("which-key").register({
+				["<leader>D"] = {
+					name = "󰆼 Db Tools",
+					u = { "<cmd>DBUIToggle<cr>", " DB UI Toggle" },
+					f = { "<cmd>DBUIFindBuffer<cr>", " DB UI Find buffer" },
+					r = { "<cmd>DBUIRenameBuffer<cr>", " DB UI Rename buffer" },
+					l = { "<cmd>DBUILastQueryInfo<cr>", " DB UI Last query infos" },
+				},
+			})
+		end,
 	},
 }
