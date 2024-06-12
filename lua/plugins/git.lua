@@ -18,4 +18,14 @@ return {
 	{
 		"tpope/vim-fugitive",
 	},
+
+	-- Fubitive Bitbucket
+	{
+		"tommcdo/vim-fubitive",
+	},
+
+	-- Diffview
+	{
+		"sindrets/diffview.nvim",
+	},
 }

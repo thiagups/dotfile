@@ -54,4 +54,23 @@ end, opts)
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
--- Tmux Keus
+-- WhichKey
+local wk = require("which-key")
+-- Togglterm
+wk.register({
+	t = {
+		name = "+Terminal",
+		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+		v = {
+			name = "+Vertical",
+			["1"] = { "<cmd>1Termexec cmd='' size=10 direction=vertical<cr>", "Vertical" },
+			["2"] = { "<cmd>2Termexec cmd='' size=10 direction=vertical<cr>", "Vertical" },
+		},
+		["h"] = {
+			name = "+Horizontal",
+			["1"] = { "<cmd>1TermExec cmd='' size=10 direction=horizontal<cr>", "Horizontal" },
+			["2"] = { "<cmd>2TermExec cmd='' size=10 direction=horizontal<cr>", "Horizontal" },
+		},
+		t = { "<cmd>ToggleTerm direction=tab<cr>", "Tab" },
+	},
+}, { prefix = "<leader>" }) -- Add closing curly brace here

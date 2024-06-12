@@ -6,7 +6,7 @@ vim.opt.fileencoding = "utf-8"
 
 vim.opt.number = true
 vim.opt.title = true
-vim.opt.autoindent = true
+vim.opt.autoindent = false
 vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.backup = false
@@ -29,6 +29,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
+vim.opt.fixendofline = false
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })

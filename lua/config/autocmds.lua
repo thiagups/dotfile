@@ -12,3 +12,12 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		vim.cmd("call jinja#AdjustFiletype()")
 	end,
 })
+
+-- Vincular ambém o jinja para arquivo tpl
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	group = augroup("twig_filetype"),
+	pattern = "*.tpl",
+	callback = function()
+		vim.cmd("set filetype=html.jinja")
+	end,
+})
